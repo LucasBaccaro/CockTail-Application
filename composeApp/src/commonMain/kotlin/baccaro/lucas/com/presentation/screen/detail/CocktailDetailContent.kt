@@ -18,7 +18,6 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.LocalBar
 import androidx.compose.material.icons.filled.NoDrinks
 import androidx.compose.runtime.Composable
