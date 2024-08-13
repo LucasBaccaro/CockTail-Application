@@ -7,12 +7,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import baccaro.lucas.com.presentation.viewmodel.CocktailDetailViewModel
 
 @Composable
-fun CocktailDetailScreen(detailViewModel: CocktailDetailViewModel) {
+fun CocktailDetailScreen(detailViewModel: CocktailDetailViewModel, onBackClick: () -> Unit) {
     val uiState = detailViewModel.uiState.collectAsStateWithLifecycle().value
 
     when {
         uiState.isLoading -> CircularProgressIndicator()
         uiState.error != null -> Text(uiState.error)
-        else -> uiState.cocktail?.let { CocktailDetailContent(it) }
+        else -> uiState.cocktail?.let { CocktailDetailContent(it, onBackClick = onBackClick) }
     }
 }
