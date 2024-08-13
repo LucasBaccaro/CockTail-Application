@@ -1,9 +1,9 @@
-# COCKTAIL APP
-
-> I used Kotlin Multiplatform
+# COCKTAIL APP In Kotlin Multiplatform.
 
 - [iOS](#ios)
+> If you need to run the app on iOS and you have a mac. Open the iosApp folder in xcode and you can run the app.
 - [Android](#android)
+> If you need to run the app on Android. Open the project in Android studio and you can run the app.
 
 ## Libraries Used
 - **Ktor:** Used for handling HTTP requests and networking operations.
