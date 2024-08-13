@@ -2,6 +2,7 @@ package baccaro.lucas.com.presentation.screen.home
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -66,18 +67,21 @@ fun CocktailItem(cocktail: CocktailModel, onCocktailClick: (String) -> Unit) {
                     .fillMaxWidth()
                     .height(100.dp)
             )
-            Column(modifier = Modifier.padding(8.dp)) {
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+            ) {
                 Text(
                     text = cocktail.name,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     fontSize = 20.sp,
-                    modifier = Modifier.padding(vertical = 4.dp)
+                    modifier = Modifier.padding(8.dp)
                 )
                 Text(
                     text = "Ingredients",
                     fontSize = 16.sp,
-                    modifier = Modifier.padding(vertical = 2.dp)
+                    modifier = Modifier.padding(8.dp)
                 )
                 CocktailIngredients(cocktail.ingredients)
             }
@@ -88,16 +92,25 @@ fun CocktailItem(cocktail: CocktailModel, onCocktailClick: (String) -> Unit) {
 
 @Composable
 fun CocktailIngredients(ingredients: List<String>) {
-    ingredients.chunked(2).forEach { pair ->
-        Row(Modifier.padding(4.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-            pair.forEach { ingredient ->
-                Text(
-                    text = "· $ingredient",
-                    maxLines = 1,
-                    fontSize = 12.sp,
-                    overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.weight(1f)
-                )
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(40.dp)
+            .padding(horizontal = 8.dp)
+    ) {
+        Column {
+            ingredients.chunked(2).forEach { pair ->
+                Row(horizontalArrangement = Arrangement.SpaceBetween) {
+                    pair.forEach { ingredient ->
+                        Text(
+                            text = "· $ingredient",
+                            maxLines = 1,
+                            fontSize = 12.sp,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
+                }
             }
         }
     }

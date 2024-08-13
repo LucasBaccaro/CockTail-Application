@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import baccaro.lucas.com.data.remote.api.OperationResult
 import baccaro.lucas.com.domain.model.CocktailModel
-import baccaro.lucas.com.domain.usecase.GetCocktailByIdUseCase
+import baccaro.lucas.com.domain.usecase.GetCocktailDetailUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class CocktailDetailViewModel(
-    private val getCocktailByIdUseCase: GetCocktailByIdUseCase
+    private val getCocktailByIdUseCase: GetCocktailDetailUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(CocktailDetailUiState())

@@ -1,0 +1,9 @@
+<resources>
+    <string name="cocktail_ingredients">Ingredientes</string>
+    <string name="cocktail_instructions">Instrucciones</string>
+    <string name="non_cocktail_instructions">No hay instrucciones</string>
+    <string name="cocktail_category">Categoria</string>
+    <string name="non_specified">Cocktail APP</string>
+    <string name="cocktail_glass">Vaso</string>
+    <string name="cocktail_empty">No hay cocktails</string>
+</resources>

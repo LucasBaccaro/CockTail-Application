@@ -8,8 +8,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import baccaro.lucas.com.presentation.screen.detail.CocktailDetailScreen
-import baccaro.lucas.com.presentation.screen.home.CocktailHomeScreen
 import baccaro.lucas.com.presentation.screen.detail.CocktailDetailViewModel
+import baccaro.lucas.com.presentation.screen.home.CocktailHomeScreen
 import baccaro.lucas.com.presentation.screen.home.CocktailSearchViewModel
 import kotlinx.serialization.Serializable
 import org.koin.compose.viewmodel.koinViewModel
@@ -35,7 +35,9 @@ fun Navigation() {
             val args = backStackEntry.toRoute<Detail>()
             val detailViewModel: CocktailDetailViewModel = koinViewModel()
             detailViewModel.getCocktailById(args.id)
-            CocktailDetailScreen(detailViewModel, onBackClick = { navController.popBackStack() })
+            CocktailDetailScreen(
+                viewmodel = detailViewModel,
+                onBackClick = { navController.popBackStack() })
         }
     }
 }

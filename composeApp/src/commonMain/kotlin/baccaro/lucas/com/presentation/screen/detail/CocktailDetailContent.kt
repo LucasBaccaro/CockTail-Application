@@ -27,7 +27,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import baccaro.lucas.com.domain.model.CocktailModel
+import cocktail_application.composeapp.generated.resources.Res
+import cocktail_application.composeapp.generated.resources.cocktail_category
+import cocktail_application.composeapp.generated.resources.cocktail_glass
+import cocktail_application.composeapp.generated.resources.cocktail_ingredients
+import cocktail_application.composeapp.generated.resources.cocktail_instructions
+import cocktail_application.composeapp.generated.resources.non_cocktail_instructions
+import cocktail_application.composeapp.generated.resources.non_specified
 import coil3.compose.AsyncImage
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun CocktailDetailContent(cocktail: CocktailModel, modifier: Modifier = Modifier, onBackClick: () -> Unit) {
@@ -51,7 +59,7 @@ fun CocktailDetailContent(cocktail: CocktailModel, modifier: Modifier = Modifier
             ) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back",
+                    contentDescription = null,
                     tint = Color.White
                 )
             }
@@ -73,26 +81,26 @@ fun CocktailDetailContent(cocktail: CocktailModel, modifier: Modifier = Modifier
             }
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Ingredients",
+                text = stringResource(Res.string.cocktail_ingredients),
             )
             cocktail.ingredients.forEach { ingredient ->
                 Text("• $ingredient")
             }
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Instructions",
+                text = stringResource(Res.string.cocktail_instructions),
             )
-            Text(cocktail.instructions ?: "No instructions available")
+            Text(cocktail.instructions ?: stringResource(Res.string.non_cocktail_instructions))
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Glass",
+                text = stringResource(Res.string.cocktail_glass),
             )
-            Text(cocktail.glass ?: "Not specified")
+            Text(cocktail.glass ?: stringResource(Res.string.non_specified))
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Category",
+                text = stringResource(Res.string.cocktail_category),
             )
-            Text(cocktail.category ?: "Not specified")
+            Text(cocktail.category ?: stringResource(Res.string.non_specified))
         }
     }
 }

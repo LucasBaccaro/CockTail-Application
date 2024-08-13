@@ -3,6 +3,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
@@ -25,14 +26,14 @@ fun SearchBar(
         modifier = modifier
             .height(50.dp)
             .fillMaxWidth()
-            .border(1.dp, Color.Black, shape = RectangleShape)
+            .border(1.dp, Color.Gray, shape = RectangleShape)
             .padding(horizontal = 8.dp, vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
             imageVector = Icons.Default.Search,
-            contentDescription = "Search Icon",
-            modifier = Modifier.padding(end = 8.dp)
+            contentDescription = null,
+            modifier = Modifier.padding(end = 8.dp).size(46.dp)
         )
         BasicTextField(
             value = query,
