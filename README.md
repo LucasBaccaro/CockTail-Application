@@ -16,9 +16,10 @@
 <table>
   <tr>
     <td align="center"><img src="images/ios_zero.png" width="200"></td>
+    <td align="center"><img src="images/ios_one.png" width="200"></td>
     <td align="center"><img src="images/ios_two.png" width="200"></td>
     <td align="center"><img src="images/ios_three.png" width="200"></td>
-    <td align="center"><img src="images/ios_one.png" width="200"></td>
+    
   </tr>
 </table>
 
@@ -26,9 +27,10 @@
 <table>
   <tr>
     <td align="center"><img src="images/android_zero.png" width="200"></td>
+    <td align="center"><img src="images/android_one.png" width="200"></td>
     <td align="center"><img src="images/android_two.png" width="200"></td>
     <td align="center"><img src="images/android_three.png" width="200"></td>
-    <td align="center"><img src="images/android_one.png" width="200"></td>
+   
     
   </tr>
 </table>
