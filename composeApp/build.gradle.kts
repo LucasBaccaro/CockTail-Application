@@ -46,7 +46,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.koin.android)
-            implementation("androidx.core:core-splashscreen:1.0.1")
+            implementation(libs.splash)
         }
         commonMain.dependencies {
             implementation(compose.runtime)

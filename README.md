@@ -1,30 +1,31 @@
 # COCKTAIL APP
 
-> I used Compose Multiplatform
+> I used Kotlin Multiplatform
 
 - [iOS](#ios)
 - [Android](#android)
-- [Libraries Used](#libraries-used)
 
 ## Libraries Used
 - **Ktor:** Used for handling HTTP requests and networking operations.
 - **Koin:** A lightweight dependency injection framework.
 - **Room:** For local database.
 - **Coil:** Efficiently loads and displays images.
-- **Navigation Compose & Safe Ars** Utilized for navigation and managing ViewModels in a multiplatform environment.
+- **Navigation Compose and Safe Ars** Utilized for navigation in a multiplatform environment.
 
 ## iOS
 <table>
   <tr>
-    <td align="center"><img src="images/ios_one.png" width="200"></td>
+    <td align="center"><img src="images/android_zero.png" width="200"></td>
     <td align="center"><img src="images/ios_two.png" width="200"></td>
     <td align="center"><img src="images/ios_three.png" width="200"></td>
+    <td align="center"><img src="images/ios_one.png" width="200"></td>
   </tr>
 </table>
 
 ## Android
 <table>
   <tr>
+    <td align="center"><img src="images/android_zero.png" width="200"></td>
     <td align="center"><img src="images/android_one.png" width="200"></td>
     <td align="center"><img src="images/android_two.png" width="200"></td>
     <td align="center"><img src="images/android_three.png" width="200"></td>

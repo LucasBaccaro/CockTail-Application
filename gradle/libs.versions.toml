@@ -23,6 +23,7 @@ coil = "3.0.0-alpha06"
 ksp = "2.0.0-1.0.21"
 androidx-room = "2.7.0-alpha05"
 androidx-sqliteBundled = "2.5.0-alpha05"
+splash = "1.0.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -54,6 +55,7 @@ coil-network-ktor = { group = "io.coil-kt.coil3", name = "coil-network-ktor", ve
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
 androidx-sqlite-bundled = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "androidx-sqliteBundled" }
+splash = { group = "androidx.core", name = "core-splashscreen", version.ref = "splash" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
