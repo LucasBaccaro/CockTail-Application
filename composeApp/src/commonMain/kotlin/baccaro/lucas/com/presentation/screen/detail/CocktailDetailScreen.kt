@@ -4,7 +4,6 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import baccaro.lucas.com.presentation.viewmodel.CocktailDetailViewModel
 
 @Composable
 fun CocktailDetailScreen(detailViewModel: CocktailDetailViewModel, onBackClick: () -> Unit) {

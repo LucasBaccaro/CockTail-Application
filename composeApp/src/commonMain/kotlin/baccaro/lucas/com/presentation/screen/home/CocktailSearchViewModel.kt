@@ -1,4 +1,4 @@
-package baccaro.lucas.com.presentation.viewmodel
+package baccaro.lucas.com.presentation.screen.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

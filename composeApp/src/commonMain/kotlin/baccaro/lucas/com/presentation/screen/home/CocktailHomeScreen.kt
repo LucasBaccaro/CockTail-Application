@@ -11,7 +11,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import baccaro.lucas.com.presentation.viewmodel.CocktailSearchViewModel
 
 @Composable
 fun CocktailHomeScreen(viewModel: CocktailSearchViewModel, onCocktailClick: (String) -> Unit) {

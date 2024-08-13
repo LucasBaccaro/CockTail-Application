@@ -9,8 +9,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import baccaro.lucas.com.presentation.screen.detail.CocktailDetailScreen
 import baccaro.lucas.com.presentation.screen.home.CocktailHomeScreen
-import baccaro.lucas.com.presentation.viewmodel.CocktailDetailViewModel
-import baccaro.lucas.com.presentation.viewmodel.CocktailSearchViewModel
+import baccaro.lucas.com.presentation.screen.detail.CocktailDetailViewModel
+import baccaro.lucas.com.presentation.screen.home.CocktailSearchViewModel
 import kotlinx.serialization.Serializable
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI

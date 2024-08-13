@@ -7,8 +7,8 @@ import baccaro.lucas.com.data.remote.repository.CocktailRepositoryImpl
 import baccaro.lucas.com.domain.repository.CocktailRepository
 import baccaro.lucas.com.domain.usecase.GetCocktailByIdUseCase
 import baccaro.lucas.com.domain.usecase.SearchCocktailsUseCase
-import baccaro.lucas.com.presentation.viewmodel.CocktailDetailViewModel
-import baccaro.lucas.com.presentation.viewmodel.CocktailSearchViewModel
+import baccaro.lucas.com.presentation.screen.detail.CocktailDetailViewModel
+import baccaro.lucas.com.presentation.screen.home.CocktailSearchViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
