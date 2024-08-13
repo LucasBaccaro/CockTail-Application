@@ -6,11 +6,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
+import androidx.navigation.toRoute
 import baccaro.lucas.com.presentation.screen.CocktailHomeScreen
 import baccaro.lucas.com.presentation.viewmodel.CocktailDetailViewModel
 import baccaro.lucas.com.presentation.viewmodel.CocktailSearchViewModel
@@ -25,24 +24,19 @@ fun Navigation() {
     NavHost(
         modifier = Modifier.fillMaxSize(),
         navController = navController,
-        startDestination = "home"
+        startDestination = Home
     ) {
-        composable("home") {
+        composable<Home> {
             val cocktailViewModel: CocktailSearchViewModel = koinViewModel()
-            CocktailHomeScreen(viewModel = cocktailViewModel, onCocktailClick = { cocktailId ->
-                navController.navigate("detail/$cocktailId")
-            })
+            CocktailHomeScreen(
+                viewModel = cocktailViewModel,
+                onCocktailClick = { cocktailId -> navController.navigate(Detail(cocktailId)) })
         }
 
-        composable(
-            "detail/{cocktailId}",
-            arguments = listOf(navArgument("cocktailId") { type = NavType.StringType })
-        ) { backStackEntry ->
-            val cocktailId = backStackEntry.arguments?.getString("cocktailId")
+        composable<Detail> { backStackEntry ->
+            val args = backStackEntry.toRoute<Detail>()
             val detailViewModel: CocktailDetailViewModel = koinViewModel()
-            cocktailId?.let {
-                detailViewModel.getCocktailById(it)
-            }
+            detailViewModel.getCocktailById(args.id)
             CocktailDetailScreen(detailViewModel)
         }
     }
@@ -61,3 +55,6 @@ fun CocktailDetailScreen(detailViewModel: CocktailDetailViewModel) {
 
 @Serializable
 object Home
+
+@Serializable
+data class Detail(val id: String)
