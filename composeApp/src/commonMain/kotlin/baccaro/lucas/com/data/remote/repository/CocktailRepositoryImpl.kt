@@ -7,7 +7,6 @@ import baccaro.lucas.com.data.remote.mapper.CocktailMapper
 import baccaro.lucas.com.domain.model.CocktailModel
 import baccaro.lucas.com.domain.repository.CocktailRepository
 import kotlinx.coroutines.flow.first
-
 class CocktailRepositoryImpl(
     private val api: CocktailApi,
     private val dao: CocktailDao
@@ -30,7 +29,17 @@ class CocktailRepositoryImpl(
                     OperationResult.Error("No drinks found")
                 }
             }
+
             is OperationResult.Error -> response
+        }
+    }
+
+    override suspend fun getCocktailById(id: String): OperationResult<CocktailModel> {
+        val cocktailEntity = dao.getCocktailById(id)
+        return if (cocktailEntity != null) {
+            OperationResult.Success(CocktailMapper.mapToDomain(cocktailEntity))
+        } else {
+            OperationResult.Error("Cocktail not found locally")
         }
     }
 

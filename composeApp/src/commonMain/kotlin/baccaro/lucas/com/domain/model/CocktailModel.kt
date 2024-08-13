@@ -1,5 +1,4 @@
 package baccaro.lucas.com.domain.model
-
 data class CocktailModel(
     val id: String,
     val name: String,

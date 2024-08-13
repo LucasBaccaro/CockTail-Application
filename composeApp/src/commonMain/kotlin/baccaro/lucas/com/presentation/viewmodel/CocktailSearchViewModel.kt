@@ -20,7 +20,6 @@ class CocktailSearchViewModel(
 
     private val _uiState = MutableStateFlow(CocktailSearchUiState())
     val uiState: StateFlow<CocktailSearchUiState> = _uiState.asStateFlow()
-
     fun onQueryChange(query: String) {
         _uiState.update { it.copy(query = query) }
         searchJob?.cancel()
@@ -29,7 +28,6 @@ class CocktailSearchViewModel(
             searchCocktails()
         }
     }
-
     private fun searchCocktails() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }

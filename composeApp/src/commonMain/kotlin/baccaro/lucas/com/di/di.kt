@@ -5,7 +5,9 @@ import baccaro.lucas.com.data.local.dao.CocktailDao
 import baccaro.lucas.com.data.remote.api.CocktailApi
 import baccaro.lucas.com.data.remote.repository.CocktailRepositoryImpl
 import baccaro.lucas.com.domain.repository.CocktailRepository
+import baccaro.lucas.com.domain.usecase.GetCocktailByIdUseCase
 import baccaro.lucas.com.domain.usecase.SearchCocktailsUseCase
+import baccaro.lucas.com.presentation.viewmodel.CocktailDetailViewModel
 import baccaro.lucas.com.presentation.viewmodel.CocktailSearchViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -21,7 +23,6 @@ import org.koin.core.module.Module
 import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module
-
 @OptIn(ExperimentalSerializationApi::class)
 val appModule = module {
     single<CocktailDao> {
@@ -52,9 +53,10 @@ val appModule = module {
     single<CocktailRepository> { CocktailRepositoryImpl(get(), get()) }
     factoryOf(::SearchCocktailsUseCase)
     viewModelOf(::CocktailSearchViewModel)
+    factoryOf(::GetCocktailByIdUseCase)
+    viewModelOf(::CocktailDetailViewModel)
 }
 expect val nativeModule: Module
-
 fun initKoin(config: KoinAppDeclaration? = null) = run {
     startKoin {
         config?.invoke(this)

@@ -15,7 +15,7 @@ import baccaro.lucas.com.presentation.screen.components.CocktailGrid
 import baccaro.lucas.com.presentation.viewmodel.CocktailSearchViewModel
 
 @Composable
-fun CocktailHomeScreen(viewModel: CocktailSearchViewModel) {
+fun CocktailHomeScreen(viewModel: CocktailSearchViewModel, onCocktailClick: (String) -> Unit) {
     val uiState by viewModel.uiState.collectAsState()
 
     Column(modifier = Modifier.fillMaxSize().padding(8.dp)) {
@@ -28,7 +28,7 @@ fun CocktailHomeScreen(viewModel: CocktailSearchViewModel) {
             uiState.isLoading -> CircularProgressIndicator()
             uiState.error != null -> uiState.error?.let { Text(it) }
             uiState.cocktails.isEmpty() -> Text("Vacios")
-            else -> CocktailGrid(uiState.cocktails)
+            else -> CocktailGrid(uiState.cocktails, onCocktailClick)
         }
     }
 }

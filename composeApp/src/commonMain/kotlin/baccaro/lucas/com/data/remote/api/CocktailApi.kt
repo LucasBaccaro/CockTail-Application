@@ -5,7 +5,6 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-
 class CocktailApi(private val httpClient: HttpClient) {
     suspend fun searchCocktails(query: String): OperationResult<CocktailResponseDto> {
         return try {

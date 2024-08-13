@@ -6,7 +6,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import baccaro.lucas.com.data.local.entity.CocktailEntity
 import kotlinx.coroutines.flow.Flow
-
 @Dao
 interface CocktailDao {
     @Query("SELECT * FROM cocktails WHERE name LIKE '%' || :query || '%'")
@@ -14,6 +13,9 @@ interface CocktailDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCocktails(cocktails: List<CocktailEntity>)
+
+    @Query("SELECT * FROM cocktails WHERE id = :id")
+    suspend fun getCocktailById(id: String): CocktailEntity?
 
     @Query("DELETE FROM cocktails")
     suspend fun deleteAllCocktails()

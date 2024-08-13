@@ -5,7 +5,6 @@ import baccaro.lucas.com.data.remote.dto.CocktailDto
 import baccaro.lucas.com.domain.model.CocktailModel
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-
 object CocktailMapper {
     fun mapToDomain(dto: CocktailDto): CocktailModel {
         return CocktailModel(
@@ -21,7 +20,6 @@ object CocktailMapper {
             image = dto.strDrinkThumb ?: ""
         )
     }
-
     fun mapToDomain(entity: CocktailEntity): CocktailModel {
         return CocktailModel(
             id = entity.id,
@@ -31,7 +29,6 @@ object CocktailMapper {
             isAlcoholic = entity.isAlcoholic
         )
     }
-
     fun mapToEntity(model: CocktailModel): CocktailEntity {
         return CocktailEntity(
             id = model.id,

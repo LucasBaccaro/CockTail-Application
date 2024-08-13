@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
@@ -26,32 +27,32 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import baccaro.lucas.com.domain.model.CocktailModel
-import cocktail_application.composeapp.generated.resources.Res
 import coil3.compose.AsyncImage
-import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun CocktailGrid(cocktails: List<CocktailModel>) {
+fun CocktailGrid(cocktails: List<CocktailModel>, onCocktailClick: (String) -> Unit) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         contentPadding = PaddingValues(4.dp),
         modifier = Modifier.fillMaxSize()
     ) {
         items(cocktails) { cocktail ->
-            CocktailItem(cocktail)
+            CocktailItem(cocktail, onCocktailClick)
         }
     }
 }
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun CocktailItem(cocktail: CocktailModel) {
+fun CocktailItem(cocktail: CocktailModel, onCocktailClick: (String) -> Unit) {
     Card(
         modifier = Modifier
             .height(280.dp)
             .padding(8.dp)
             .fillMaxWidth()
             .border(1.dp, Color.Black),
-        elevation = 4.dp
+        elevation = 4.dp,
+        onClick = { onCocktailClick(cocktail.id) }
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

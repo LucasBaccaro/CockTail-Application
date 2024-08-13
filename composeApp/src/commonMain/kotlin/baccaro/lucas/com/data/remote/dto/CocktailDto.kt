@@ -2,7 +2,6 @@ package baccaro.lucas.com.data.remote.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-
 @Serializable
 data class CocktailDto(
     @SerialName("idDrink") val idDrink: String,
@@ -15,7 +14,6 @@ data class CocktailDto(
     @SerialName("strDrinkThumb") val strDrinkThumb: String?,
 
 )
-
 @Serializable
 data class CocktailResponseDto(
     @SerialName("drinks") val drinks: List<CocktailDto>?
