@@ -4,5 +4,8 @@ data class CocktailModel(
     val name: String,
     val ingredients: List<String>,
     val isAlcoholic: Boolean,
-    val image: String
+    val image: String,
+    val instructions: String?,
+    val glass: String?,
+    val category: String?
 )

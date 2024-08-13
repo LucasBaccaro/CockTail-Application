@@ -1,4 +1,4 @@
-package baccaro.lucas.com.presentation.screen
+package baccaro.lucas.com.presentation.screen.home
 
 import SearchBar
 import androidx.compose.foundation.layout.Column
@@ -11,7 +11,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import baccaro.lucas.com.presentation.screen.components.CocktailGrid
 import baccaro.lucas.com.presentation.viewmodel.CocktailSearchViewModel
 
 @Composable
@@ -28,8 +27,7 @@ fun CocktailHomeScreen(viewModel: CocktailSearchViewModel, onCocktailClick: (Str
             uiState.isLoading -> CircularProgressIndicator()
             uiState.error != null -> uiState.error?.let { Text(it) }
             uiState.cocktails.isEmpty() -> Text("Vacios")
-            else -> CocktailGrid(uiState.cocktails, onCocktailClick)
+            else -> CocktailHomeContent(uiState.cocktails, onCocktailClick)
         }
     }
 }
-

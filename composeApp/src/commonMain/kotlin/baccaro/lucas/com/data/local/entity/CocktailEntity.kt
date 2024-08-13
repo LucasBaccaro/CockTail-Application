@@ -8,5 +8,8 @@ data class CocktailEntity(
     val name: String,
     val image: String,
     val ingredients: String,
-    val isAlcoholic: Boolean
+    val isAlcoholic: Boolean,
+    val instructions: String?,
+    val glass: String?,
+    val category: String?
 )

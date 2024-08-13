@@ -1,4 +1,4 @@
-package baccaro.lucas.com.presentation.screen.components
+package baccaro.lucas.com.presentation.screen.home
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -30,7 +30,7 @@ import baccaro.lucas.com.domain.model.CocktailModel
 import coil3.compose.AsyncImage
 
 @Composable
-fun CocktailGrid(cocktails: List<CocktailModel>, onCocktailClick: (String) -> Unit) {
+fun CocktailHomeContent(cocktails: List<CocktailModel>, onCocktailClick: (String) -> Unit) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         contentPadding = PaddingValues(4.dp),

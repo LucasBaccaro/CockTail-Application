@@ -17,7 +17,10 @@ object CocktailMapper {
                 dto.strIngredient4
             ),
             isAlcoholic = dto.strAlcoholic == "Alcoholic",
-            image = dto.strDrinkThumb ?: ""
+            image = dto.strDrinkThumb ?: "",
+            instructions = dto.strInstructions ?: "",
+            glass = dto.strGlass ?: "",
+            category = dto.strCategory ?: ""
         )
     }
     fun mapToDomain(entity: CocktailEntity): CocktailModel {
@@ -26,7 +29,10 @@ object CocktailMapper {
             name = entity.name,
             image = entity.image,
             ingredients = Json.decodeFromString(entity.ingredients),
-            isAlcoholic = entity.isAlcoholic
+            isAlcoholic = entity.isAlcoholic,
+            instructions = entity.instructions,
+            glass = entity.glass,
+            category = entity.category
         )
     }
     fun mapToEntity(model: CocktailModel): CocktailEntity {
@@ -35,7 +41,10 @@ object CocktailMapper {
             name = model.name,
             image = model.image,
             ingredients = Json.encodeToString(model.ingredients),
-            isAlcoholic = model.isAlcoholic
+            isAlcoholic = model.isAlcoholic,
+            instructions = model.instructions,
+            glass = model.glass,
+            category = model.category
         )
     }
 }

@@ -3,6 +3,7 @@ package baccaro.lucas.com.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import baccaro.lucas.com.data.remote.api.OperationResult
+import baccaro.lucas.com.domain.model.CocktailModel
 import baccaro.lucas.com.domain.usecase.SearchCocktailsUseCase
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -45,9 +46,22 @@ class CocktailSearchViewModel(
                         }
                     }
                 }
-            }else{
-                _uiState.update { it.copy(isLoading = false, error = null, cocktails = emptyList()) }
+            } else {
+                _uiState.update {
+                    it.copy(
+                        isLoading = false,
+                        error = null,
+                        cocktails = emptyList()
+                    )
+                }
             }
         }
     }
 }
+
+data class CocktailSearchUiState(
+    val query: String = "",
+    val cocktails: List<CocktailModel> = emptyList(),
+    val isLoading: Boolean = false,
+    val error: String? = null
+)

@@ -12,7 +12,9 @@ data class CocktailDto(
     @SerialName("strIngredient3") val strIngredient3: String?,
     @SerialName("strIngredient4") val strIngredient4: String?,
     @SerialName("strDrinkThumb") val strDrinkThumb: String?,
-
+    @SerialName("strInstructions") val strInstructions: String?,
+    @SerialName("strGlass") val strGlass: String?,
+    @SerialName("strCategory") val strCategory: String?
 )
 @Serializable
 data class CocktailResponseDto(
