@@ -24,6 +24,8 @@ ksp = "2.0.0-1.0.21"
 androidx-room = "2.7.0-alpha05"
 androidx-sqliteBundled = "2.5.0-alpha05"
 splash = "1.0.1"
+assertk = "0.28.1"
+
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -56,6 +58,7 @@ androidx-room-runtime = { group = "androidx.room", name = "room-runtime", versio
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
 androidx-sqlite-bundled = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "androidx-sqliteBundled" }
 splash = { group = "androidx.core", name = "core-splashscreen", version.ref = "splash" }
+assertk = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertk" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
